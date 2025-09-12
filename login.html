@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login / Register • Smart Waste</title>
+    <link rel="icon" href="../images/leaf.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              eco: { light: '#81c784', DEFAULT: '#4caf50', dark: '#3a6b35' },
+              forest: '#3a6b35',
+            },
+            boxShadow: { soft: '0 8px 30px rgba(0,0,0,0.08)' },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body data-page="login" class="min-h-screen bg-gradient-to-b from-emerald-50 to-white text-slate-800">
+    <main class="min-h-screen grid place-items-center px-4">
+      <section class="w-full max-w-md rounded-2xl bg-white p-6 shadow-soft border border-emerald-100">
+        <div class="flex items-center gap-2">
+          <img src="../images/user.svg" alt="User" class="h-6 w-6" />
+          <h1 class="text-xl font-semibold text-forest">Welcome back</h1>
+        </div>
+        <p class="mt-1 text-sm text-slate-500">Login or create your account to start earning eco points.</p>
+
+        <form id="authForm" class="mt-6 grid gap-4" novalidate>
+          <div>
+            <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required class="mt-1 block w-full rounded-lg border border-emerald-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-eco" placeholder="you@example.com" />
+            <p id="emailError" class="hidden mt-1 text-xs text-red-600">Enter a valid email.</p>
+          </div>
+
+          <div>
+            <label for="password" class="block text-sm font-medium text-slate-700">Password</label>
+            <input id="password" name="password" type="password" minlength="6" required class="mt-1 block w-full rounded-lg border border-emerald-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-eco" placeholder="••••••••" />
+            <p id="passwordError" class="hidden mt-1 text-xs text-red-600">Password must be at least 6 characters.</p>
+          </div>
+
+          <div>
+            <label for="role" class="block text-sm font-medium text-slate-700">Role</label>
+            <select id="role" name="role" class="mt-1 block w-full rounded-lg border border-emerald-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-eco">
+              <option>Individual</option>
+              <option>Community Leader</option>
+              <option>Organization</option>
+            </select>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-3">
+            <button type="button" id="loginBtn" class="btn-primary">Login</button>
+            <button type="button" id="registerBtn" class="btn-secondary">Register</button>
+          </div>
+
+          <p id="authMessage" class="text-sm text-center text-slate-600"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>

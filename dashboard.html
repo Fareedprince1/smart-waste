@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard • Smart Waste</title>
+    <link rel="icon" href="../images/leaf.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              eco: { light: '#81c784', DEFAULT: '#4caf50', dark: '#3a6b35' },
+              forest: '#3a6b35',
+            },
+            boxShadow: { soft: '0 8px 30px rgba(0,0,0,0.08)' },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body data-page="dashboard" class="min-h-screen bg-emerald-50 text-slate-800">
+    <header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-emerald-100">
+      <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="../images/leaf.svg" alt="Logo" class="h-7 w-7" />
+          <span class="font-semibold">Smart Waste</span>
+        </a>
+        <ul class="hidden md:flex items-center gap-6 text-sm">
+          <li><a class="hover:text-eco" href="community.html">Community</a></li>
+          <li><a class="hover:text-eco" href="missions.html">Missions</a></li>
+          <li><a class="hover:text-eco" href="leadership.html">Leadership</a></li>
+        </ul>
+        <!-- AUTH BUTTON HERE - will be updated by common.js -->
+        <a id="authButton" href="login.html" class="btn-primary px-4 py-2">Login</a>
+        <button class="md:hidden p-2 rounded hover:bg-emerald-100" id="mobileMenuButton" aria-label="Toggle Menu">☰</button>
+      </nav>
+      <div id="mobileMenu" class="md:hidden hidden border-t border-emerald-100 bg-white">
+        <ul class="px-4 py-3 space-y-2">
+          <li><a class="block rounded px-3 py-2 hover:bg-emerald-50" href="community.html">Community</a></li>
+          <li><a class="block rounded px-3 py-2 hover:bg-emerald-50" href="missions.html">Missions</a></li>
+          <li><a class="block rounded px-3 py-2 hover:bg-emerald-50" href="leadership.html">Leadership</a></li>
+          <!-- AUTH BUTTON MOBILE - will be updated by common.js -->
+          <li><a class="block rounded px-3 py-2 hover:bg-emerald-50" id="authButtonMobile" href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 space-y-6">
+          <div class="rounded-2xl bg-white p-6 shadow-soft border border-emerald-100">
+            <div class="flex items-center gap-3">
+                <h1 id="welcomeTitle" class="text-2xl font-bold text-forest">Welcome!</h1>
+                <span id="userRoleBadge" class="px-3 py-1 bg-emerald-100 text-forest text-xs font-semibold rounded-full hidden"></span>
+            </div>
+            <p class="mt-1 text-slate-600">Here’s your eco impact today.</p>
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="card-stat">
+                <p class="text-sm text-slate-500">Your Points</p>
+                <p id="userPoints" class="text-3xl font-bold text-eco">0</p>
+              </div>
+              <div class="card-stat">
+                <p class="text-sm text-slate-500">Missions Joined</p>
+                <p id="joinedMissionsCount" class="text-3xl font-bold text-eco">0</p>
+              </div>
+              <div class="card-stat">
+                <p class="text-sm text-slate-500">Posts Created</p>
+                <p id="userPostsCount" class="text-3xl font-bold text-eco">0</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-white p-6 shadow-soft border border-emerald-100">
+            <h2 class="font-semibold text-forest">Daily Eco Tip</h2>
+            <p id="ecoTip" class="mt-2 text-slate-700"></p>
+          </div>
+        </div>
+
+        <aside class="space-y-6">
+          <div class="rounded-2xl bg-white p-6 shadow-soft border border-emerald-100">
+            <h2 class="font-semibold text-forest">Quick Actions</h2>
+            <div id="quickActionsGrid" class="mt-4 grid grid-cols-2 gap-3">
+                <a href="community.html" class="btn-secondary text-center">Community</a>
+                <a href="missions.html" class="btn-secondary text-center">Missions</a>
+                <a href="leadership.html" class="btn-secondary text-center">Leadership</a>
+                <!-- Dynamic role-specific links will be inserted here by dashboard.js -->
+                <a href="login.html" id="dashAuthBtn" class="btn-secondary text-center">Login</a>
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-white p-6 shadow-soft border border-emerald-100">
+            <h2 class="font-semibold text-forest">Leaderboard</h2>
+            <ol id="leaderboardList" class="mt-4 space-y-2 text-sm"></ol>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="mt-8 border-t border-emerald-100 bg-white/80">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 text-sm text-slate-600 flex items-center justify-between">
+        <p>© <span id="year"></span> Smart Waste Community</p>
+        <a class="hover:text-eco" href="../pages/index.html">Home</a>
+      </div>
+    </footer>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/dashboard.js"></script>
+  </body>
+</html>

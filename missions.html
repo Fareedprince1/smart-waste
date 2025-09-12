@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Missions • Smart Waste</title>
+    <link rel="icon" href="/images/leaf.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              eco: { light: '#81c784', DEFAULT: '#4caf50', dark: '#3a6b35' },
+              forest: '#3a6b35',
+            },
+            boxShadow: { soft: '0 8px 30px rgba(0,0,0,0.08)' },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="\waste-management-app\css\style.css" />
+  </head>
+  <body data-page="missions" class="min-h-screen bg-emerald-50 text-slate-800">
+    <header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-emerald-100">
+      <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <a href="\waste-management-app\pages\index.html" class="flex items-center gap-2">
+          <img src="/images/leaf.svg" alt="Logo" class="h-7 w-7" />
+          <span class="font-semibold">Smart Waste</span>
+        </a>
+        <ul class="hidden md:flex items-center gap-6 text-sm">
+          <li><a class="hover:text-eco" href="\waste-management-app\pages\community.html">Community</a></li>
+          <li><a class="hover:text-eco" href="\waste-management-app\pages\leadership.html">Leadership</a></li>
+          <li><a class="hover:text-eco" href="\waste-management-app\pages\dashboard.html">Dashboard</a></li>
+        </ul>
+        <a id="authButton" href="\waste-management-app\pages\login.html" class="btn-primary px-4 py-2">Login</a>
+        <button class="md:hidden p-2 rounded hover:bg-emerald-100" id="mobileMenuButton" aria-label="Toggle Menu">☰</button>
+      </nav>
+      <div id="mobileMenu" class="md:hidden hidden border-t border-emerald-100 bg-white">
+        <ul class="px-4 py-3 space-y-2">
+          <li><a class="block rounded px-3 py-2 hover:bg-emerald-50" href="\waste-management-app\pages\community.html">Community</a></li>
+          <li><a class="block rounded px-3 py-2 hover:bg-emerald-50" href="\waste-management-app\pages\leadership.html">Leadership</a></li>
+          <li><a class="block rounded px-3 py-2 hover:bg-emerald-50" href="\waste-management-app\pages\dashboard.html">Dashboard</a></li>
+          <li><a class="block rounded px-3 py-2 hover:bg-emerald-50" id="authButtonMobile" href="\waste-management-app\pages\login.html">Login</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+      <section class="rounded-2xl bg-white p-6 shadow-soft border border-emerald-100">
+        <h1 class="text-xl font-bold text-forest">Government Initiatives</h1>
+        <p class="text-sm text-slate-600">Join missions and earn points.</p>
+        <div id="missionsGrid" class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      </section>
+
+      <section class="mt-6 rounded-2xl bg-white p-6 shadow-soft border border-emerald-100">
+        <h2 class="text-lg font-semibold text-forest">Upcoming Events</h2>
+        <ul id="eventsList" class="mt-3 grid gap-3 text-sm"></ul>
+      </section>
+    </main>
+
+    <footer class="mt-8 border-t border-emerald-100 bg-white/80">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 text-sm text-slate-600 flex items-center justify-between">
+        <p>© <span id="year"></span> Smart Waste Community</p>
+        <a class="hover:text-eco" href="\waste-management-app\pages\index.html">Home</a>
+      </div>
+    </footer>
+
+    <script src="\waste-management-app\js\common.js" defer></script>
+    <script src="\waste-management-app\js\missions.js" defer></script>
+  </body>
+</html>

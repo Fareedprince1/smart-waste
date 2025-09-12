@@ -1,0 +1,103 @@
+/* Tailwind handles most styling. Add subtle custom effects here. */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(16,185,129,0.08);
+  transition: all 0.2s;
+  outline: none;
+}
+.btn-primary:hover {
+  background-color: rgba(16,185,129,0.9);
+}
+.btn-primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-eco, #10b981);
+}
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(16,185,129,0.08);
+  transition: all 0.2s;
+  outline: none;
+}
+.btn-secondary:hover {
+  box-shadow: 0 4px 6px -1px rgba(16,185,129,0.1);
+}
+.btn-secondary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(16,185,129,0.4);
+}
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+/* If you process with Tailwind, you can keep these @apply rules.
+   Otherwise, remove them or replace with regular CSS as above. */
+.btn-secondary {
+  /* @apply inline-flex items-center justify-center rounded-full bg-white text-eco border border-emerald-200 px-5 py-2 shadow hover:shadow-md transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-eco/40 active:scale-[0.98]; */
+}
+
+.card-stat {
+  border-radius: 0.75rem;
+  border: 1px solid #d1fae5;
+  padding: 1rem;
+  /* @apply rounded-xl border border-emerald-100 p-4 bg-white; */
+}
+
+.post-card {
+  border-radius: 0.75rem;
+  border: 1px solid #d1fae5;
+  padding: 1rem;
+  /* @apply rounded-xl border border-emerald-100 p-4 bg-white shadow-sm; */
+}
+
+.progress-track {
+  width: 100%;
+  height: 0.5rem;
+  background-color: #d1fae5;
+  border-radius: 9999px;
+  overflow: hidden;
+  /* @apply w-full h-2 bg-emerald-100 rounded-full overflow-hidden; */
+}
+.progress-bar {
+  height: 100%;
+  background-color: var(--color-eco, #10b981);
+  transition: all 0.2s;
+  /* @apply h-full bg-eco transition-all; */
+}
+
+/* Simple fade-in */
+.fade-in {
+  animation: fadeIn 0.35s ease both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Utility */
+.text-forest { color: #3a6b35; }
+
+/* Add for image preview on community page */
+.image-preview {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+}

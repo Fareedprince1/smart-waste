@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart Waste & Recycling Community</title>
+    <meta name="description" content="Join a modern, gamified platform to manage waste smartly, learn, and engage with your community for a cleaner, greener future." />
+    <link rel="icon" href="../images/leaf.svg" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              eco: { light: '#81c784', DEFAULT: '#4caf50', dark: '#3a6b35' },
+              forest: '#3a6b35',
+            },
+            boxShadow: {
+              soft: '0 8px 30px rgba(0,0,0,0.08)',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-6px)' },
+              },
+              pulseGlow: {
+                '0%, 100%': { boxShadow: '0 0 0 0 rgba(76, 175, 80, 0.6)' },
+                '50%': { boxShadow: '0 0 0 16px rgba(76, 175, 80, 0)' },
+              },
+            },
+            animation: {
+              float: 'float 3s ease-in-out infinite',
+              pulseGlow: 'pulseGlow 2.8s ease-out infinite',
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body data-page="landing" class="min-h-screen bg-gradient-to-b from-emerald-50 to-white text-slate-800">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b border-emerald-100">
+      <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16" aria-label="Main">
+        <a href="index.html" class="flex items-center gap-2 group" aria-label="Home">
+          <img src="../images/leaf.svg" alt="Eco Leaf" class="h-7 w-7 animate-float" />
+          <span class="font-semibold tracking-tight group-hover:text-eco transition-colors">Smart Waste</span>
+        </a>
+        <ul class="hidden md:flex items-center gap-6 text-sm">
+        </ul>
+        <div class="flex items-center gap-3">
+          <a id="authButton" href="login.html" class="inline-flex items-center gap-2 rounded-full bg-eco px-4 py-2 text-white shadow-soft hover:bg-eco/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-eco">
+            <img src="../images/user.svg" class="h-4 w-4" alt="User" />
+            <span>Login</span>
+          </a>
+          <button class="md:hidden inline-flex items-center justify-center rounded-md p-2 hover:bg-emerald-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-eco" id="mobileMenuButton" aria-label="Toggle Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="md:hidden hidden border-t border-emerald-100 bg-white">
+        <ul class="px-4 py-3 space-y-2">
+          <li><a class="block rounded px-3 py-2 hover:bg-emerald-50" id="authButtonMobile" href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 pb-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-forest">
+            Make Waste Smart. Make Earth Greener.
+          </h1>
+          <p class="mt-4 text-slate-600 max-w-prose">
+            Join the community-driven platform to reduce, reuse, and recycle. Earn points, share eco tips, and participate in national missions like <span class="font-semibold">Swachh Bharat</span>.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="login.html" class="inline-flex items-center gap-2 rounded-full bg-eco px-6 py-3 text-white shadow-soft hover:bg-eco/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-eco">
+              <img src="../images/recycle.svg" class="h-5 w-5" alt="Recycle icon" />
+              Join the Movement
+            </a>
+          </div>
+          <div class="mt-6 flex items-center gap-3 text-sm text-slate-500">
+            <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-eco animate-ping"></span> Real-time updates</span>
+            <span>•</span>
+            <span>Gamified actions</span>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute inset-0 -z-10 blur-3xl opacity-40 bg-emerald-300 rounded-full translate-x-10 translate-y-10"></div>
+          <div class="rounded-2xl bg-white p-6 shadow-soft border border-emerald-100">
+            <div class="flex items-center gap-4">
+          <img src="../images/recycle.svg" alt="Animated recycle" class="h-12 w-12 animate-float animate-pulseGlow" />
+              <div>
+                <p class="font-semibold">Track and Reduce Household Waste</p>
+                <p class="text-sm text-slate-500">Small steps, big change.</p>
+              </div>
+            </div>
+            <div class="mt-6 grid grid-cols-3 gap-4 text-center">
+              <div class="rounded-xl border border-emerald-100 p-4">
+                <p class="text-2xl font-bold text-eco">10</p>
+                <p class="text-xs text-slate-500">Community Members</p>
+              </div>
+              <div class="rounded-xl border border-emerald-100 p-4">
+                <p class="text-2xl font-bold text-eco">25</p>
+                <p class="text-xs text-slate-500">KG Waste Saved</p>
+              </div>
+              <div class="rounded-xl border border-emerald-100 p-4">
+                <p class="text-2xl font-bold text-eco">1.2k</p>
+                <p class="text-xs text-slate-500">Events Hosted</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Join Us -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <h2 class="text-2xl sm:text-3xl font-bold text-forest">Why Join Us?</h2>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="rounded-2xl bg-white p-6 shadow-soft border border-emerald-100 transition hover:-translate-y-0.5 hover:shadow-md">
+          <div class="flex items-center gap-3">
+            <img src="../images/trophy.svg" alt="Trophy" class="h-6 w-6" />
+            <h3 class="font-semibold">Gamified Impact</h3>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Earn points by posting, joining missions, and helping your community.</p>
+        </article>
+        <article class="rounded-2xl bg-white p-6 shadow-soft border border-emerald-100 transition hover:-translate-y-0.5 hover:shadow-md">
+          <div class="flex items-center gap-3">
+            <img src="../images/team.svg" alt="Team" class="h-6 w-6" />
+            <h3 class="font-semibold">Community First</h3>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Share tips, like posts, and lead local clean-up drives.</p>
+        </article>
+        <article class="rounded-2xl bg-white p-6 shadow-soft border border-emerald-100 transition hover:-translate-y-0.5 hover:shadow-md">
+          <div class="flex items-center gap-3">
+            <img src="../images/mission.svg" alt="Mission" class="h-6 w-6" />
+            <h3 class="font-semibold">Aligned with Missions</h3>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Participate in government initiatives like Swachh Bharat and Plastic Ban.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Education: YouTube videos -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <h2 class="text-2xl sm:text-3xl font-bold text-forest">Learn: How Waste Harms Nature</h2>
+      <p class="mt-2 text-slate-600">Watch and share to spread awareness.</p>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="aspect-video rounded-xl overflow-hidden shadow-soft border border-emerald-100">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/6jQ7y_qQYUA" title="The Story of Plastic" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="aspect-video rounded-xl overflow-hidden shadow-soft border border-emerald-100">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/1B8l9rgMBp0" title="Why Recycling Matters" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-8 border-t border-emerald-100 bg-white/80">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 text-sm text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p>© <span id="year"></span> Smart Waste Community. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a href="login.html" class="hover:text-eco">Login</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="\waste-management-app\js\common.js" defer></script>
+  </body>
+</html>
